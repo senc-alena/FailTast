@@ -6,6 +6,6 @@ public class DropDawnTest extends BaseTest {
 
     @Test
     public void check() {
-        driver.get(BASE_URL);
+        herokuPage.openPage();
     }
 }
