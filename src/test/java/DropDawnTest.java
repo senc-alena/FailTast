@@ -5,7 +5,8 @@ import static basepage.BasePage.BASE_URL;
 public class DropDawnTest extends BaseTest {
 
     @Test
-    public void check() {
-        herokuPage.openPage();
+    public void check() throws InterruptedException {
+        contextMenuPage.openPage("context_menu");
+        contextMenuPage.checkContexMenu();
     }
 }

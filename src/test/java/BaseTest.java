@@ -1,4 +1,4 @@
-import basepage.HerokuPage;
+import basepage.ContextMenuPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -10,18 +10,18 @@ import java.time.Duration;
 
 public class BaseTest {
     WebDriver driver;
-    HerokuPage herokuPage;
+    ContextMenuPage contextMenuPage;
 
     @BeforeMethod
     public void setUp() {
         driver = new EdgeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
-        herokuPage = new HerokuPage(driver);
+        contextMenuPage = new ContextMenuPage(driver);
     }
 
     @AfterMethod
     public void tearDown() {
-        driver.quit();
+/*         driver.quit(); */
     }
 }
