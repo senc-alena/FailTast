@@ -1,6 +1,6 @@
 import org.testng.annotations.Test;
 
-import static basepage.BasePage.BASE_URL;
+import static org.testng.Assert.assertEquals;
 
 public class DropDawnTest extends BaseTest {
 
@@ -8,5 +8,9 @@ public class DropDawnTest extends BaseTest {
     public void check() throws InterruptedException {
         contextMenuPage.openPage("context_menu");
         contextMenuPage.checkContexMenu();
+        assertEquals(contextMenuPage.checkAlertMessage(),
+                "You selected a context menu");
+        contextMenuPage.closeAlert();
+        Thread.sleep(5000);
     }
 }
