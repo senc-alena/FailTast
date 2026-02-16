@@ -1,20 +1,14 @@
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-
-import static basepage.BasePage.BASE_URL;
 import static org.testng.Assert.assertEquals;
 
-public class DropDawnTest extends BaseTest {
-
-    @Test
-    public void check() throws InterruptedException {
-        contextMenuPage.openPage("context_menu");
-        contextMenuPage.checkContexMenu();
-    }
-
+public class AlertTest extends BaseTest {
     @Test
     public void testContextMenuAlert() {
         contextMenuPage.openPage("context_menu");
