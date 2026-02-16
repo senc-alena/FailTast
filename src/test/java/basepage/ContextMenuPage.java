@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
 public class ContextMenuPage extends BasePage {
+    private Alert alert;
 
     public ContextMenuPage(WebDriver driver) {
         super(driver);
@@ -15,19 +16,16 @@ public class ContextMenuPage extends BasePage {
     private By hotLocator = By.cssSelector("#hot-spot");
 
     public void checkContexMenu() throws InterruptedException {
-
         Actions actions = new Actions(driver);
         actions.contextClick(driver.findElement(hotLocator)).perform();
-
-        Thread.sleep(100000);
-
     }
 
     public String checkAlertMessage() {
-        Alert alert = driver.switchTo().alert();
+        alert = driver.switchTo().alert();
         return alert.getText();
-
     }
 
-
+    public void closeAlert() {
+        alert.accept();
+    }
 }

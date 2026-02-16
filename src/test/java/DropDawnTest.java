@@ -1,10 +1,5 @@
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-import static basepage.BasePage.BASE_URL;
 import static org.testng.Assert.assertEquals;
 
 public class DropDawnTest extends BaseTest {
@@ -13,19 +8,9 @@ public class DropDawnTest extends BaseTest {
     public void check() throws InterruptedException {
         contextMenuPage.openPage("context_menu");
         contextMenuPage.checkContexMenu();
-    }
-
-    @Test
-    public void testContextMenuAlert() {
-        contextMenuPage.openPage("context_menu");
-
-        WebElement box = driver.findElement(By.id("hot-spot"));  // ← здесь ошибка
-        new Actions(driver).contextClick(box).perform();
-
-        Alert alert = driver.switchTo().alert();
-        assertEquals("You selected a context menu", alert.getText());
-
-        alert.accept();
-        driver.quit();
+        assertEquals(contextMenuPage.checkAlertMessage(),
+                "You selected a context menu");
+        contextMenuPage.closeAlert();
+        Thread.sleep(5000);
     }
 }
