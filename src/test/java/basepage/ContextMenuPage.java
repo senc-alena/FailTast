@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
-public class ContextMenuPage extends BasePage {
+public class  ContextMenuPage extends BasePage {
     private Alert alert;
 
     public ContextMenuPage(WebDriver driver) {
